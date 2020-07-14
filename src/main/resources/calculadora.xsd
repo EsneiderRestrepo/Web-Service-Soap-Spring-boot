@@ -1,0 +1,42 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://pruebajava.com/soap-ws-calculator"
+	targetNamespace="http://pruebajava.com/soap-ws-calculator"
+	elementFormDefault="qualified">
+
+	<xs:element name="getCalculadoraRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="num1" type="xs:double" />
+				<xs:element name="num2" type="xs:double" />
+				<xs:element name="operacion" type="tns:operacion" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getCalculadoraResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="calculadora" type="tns:calculadora" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="calculadora">
+		<xs:sequence>
+			<xs:element name="num1" type="xs:double" />
+			<xs:element name="num2" type="xs:double" />
+			<xs:element name="operacion" type="tns:operacion" />
+			<xs:element name="resultado" type="xs:double" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="operacion">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SUMAR" />
+			<xs:enumeration value="RESTAR" />
+			<xs:enumeration value="MULTIPLICAR" />
+			<xs:enumeration value="DIVIDIR" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

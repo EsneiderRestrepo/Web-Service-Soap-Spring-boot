@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                                  xmlns:gs="http://pruebajava.com/soap-ws-calculator">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getCalculadoraRequest>
+         <gs:num1>3.4</gs:num1>
+         <gs:num2>5</gs:num2>
+         <gs:operacion>SUMAR</gs:operacion>
+      </gs:getCalculadoraRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
